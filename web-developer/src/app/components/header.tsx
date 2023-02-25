@@ -13,13 +13,11 @@ const Header: FC<Record<string, never>> = function () {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Navbar.Link href="/" active>
-            Home
-          </Navbar.Link>
-          <Navbar.Link href="/">About</Navbar.Link>
-          <Navbar.Link href="/">Experience</Navbar.Link>
-          <Navbar.Link href="/">Pricing</Navbar.Link>
-          <Navbar.Link href="/">Contact</Navbar.Link>
+          <Navbar.Link href="/" active>Hjem</Navbar.Link>
+          <Navbar.Link href="/">Om</Navbar.Link>
+          <Navbar.Link href="/">Kompetencer</Navbar.Link>
+          <Navbar.Link href="/">Priser</Navbar.Link>
+          <Navbar.Link href="/">Kontakt</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </header>
