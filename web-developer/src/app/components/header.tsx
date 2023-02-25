@@ -1,7 +1,15 @@
 import { Navbar } from "flowbite-react";
-import { FC } from "react";
+import React, { FC, useCallback, useRef } from "react";
 
 const Header: FC<Record<string, never>> = function () {
+
+    const scrollToSection = useCallback((id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+        }
+      }, []);
+    
 
   return (
     <header className="sticky top-0 z-20">
@@ -13,11 +21,11 @@ const Header: FC<Record<string, never>> = function () {
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-          <Navbar.Link href="/" active>Hjem</Navbar.Link>
-          <Navbar.Link href="/">Om</Navbar.Link>
-          <Navbar.Link href="/">Kompetencer</Navbar.Link>
-          <Navbar.Link href="/">Priser</Navbar.Link>
-          <Navbar.Link href="/">Kontakt</Navbar.Link>
+          <Navbar.Link onClick={() => scrollToSection("home")} className="navlink">Hjem</Navbar.Link>
+          <Navbar.Link onClick={() => scrollToSection("about")} className="navlink">Om</Navbar.Link>
+          <Navbar.Link onClick={() => scrollToSection("competances")} className="navlink">Kompetencer</Navbar.Link>
+          <Navbar.Link onClick={() => scrollToSection("prices")} className="navlink">Priser</Navbar.Link>
+          <Navbar.Link onClick={() => scrollToSection("contact")} className="navlink">Kontakt</Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
     </header>
