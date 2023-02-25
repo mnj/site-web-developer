@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Particles id="tsparticles" />
+      
     </main>
   )
 }
