@@ -6,10 +6,11 @@ const Header: FC<Record<string, never>> = function () {
     const scrollToSection = useCallback((id: string) => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            //element.scrollIntoView({ behavior: "smooth", block: "start" });
+            var topOfElement = element.offsetTop - 48;
+            window.scroll( { top: topOfElement, behavior: "smooth" });
         }
       }, []);
-    
 
   return (
     <header className="sticky top-0 z-20">
